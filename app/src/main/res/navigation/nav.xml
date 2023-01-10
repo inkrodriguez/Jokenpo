@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/userFragment">
+
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.jokenpo.Fragments.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_userFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.jokenpo.Fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_highscoreFragment"
+            app:destination="@id/highscoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/highscoreFragment"
+        android:name="com.example.jokenpo.Fragments.HighscoreFragment"
+        android:label="fragment_highscore"
+        tools:layout="@layout/fragment_highscore" />
+</navigation>
