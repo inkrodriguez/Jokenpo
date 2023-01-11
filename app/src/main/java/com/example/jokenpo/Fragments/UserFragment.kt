@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import com.example.jokenpo.R
 
 
@@ -17,7 +18,9 @@ class UserFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View ? {
         val view = inflater.inflate(R.layout.fragment_user, container, false)
-        var btnSkin = view.findViewById<ImageView>(R.id.imgSkin)
+        var btnRandom = view.findViewById<ImageView>(R.id.imgRandom)
+        var btnBack = view.findViewById<ImageView>(R.id.imgBack)
+        var btnNext = view.findViewById<ImageView>(R.id.imgNext)
         var imgUsuario = view.findViewById<ImageView>(R.id.imgUsuario)
 
         var listaSkin = listOf(
@@ -37,22 +40,40 @@ class UserFragment : Fragment() {
         )
 
         var i = 0
-        btnSkin.setOnClickListener {
 
-            if(i >= listaSkin.size){
-                i = 0
-                imgUsuario.setImageResource(listaSkin[0])
-            }else{
-
-            while(i < listaSkin.size) {
+        btnBack.setOnClickListener {
+            if (i == 0) {
+                i = listaSkin.size-1
                 imgUsuario.setImageResource(listaSkin[i])
-                i++
-                break
+            } else {
+                while (i <= listaSkin.size) {
+                    i--
+                    imgUsuario.setImageResource(listaSkin[i])
+                    Toast.makeText(context, "${listaSkin.size} e ${i}", Toast.LENGTH_SHORT).show()
+                    break
+                }
             }
-            }
-
-
         }
+
+        btnNext.setOnClickListener {
+            if (i == listaSkin.size - 1) {
+                i = 0
+                imgUsuario.setImageResource(listaSkin[i])
+            } else {
+                while (i <= listaSkin.size) {
+                    i++
+                    imgUsuario.setImageResource(listaSkin[i])
+                    Toast.makeText(context, "${listaSkin.size} e ${i}", Toast.LENGTH_SHORT).show()
+                    break
+                }
+            }
+        }
+
+        btnRandom.setOnClickListener {
+            imgUsuario.setImageResource(listaSkin.random())
+            }
+
+
 
         return view
     }
