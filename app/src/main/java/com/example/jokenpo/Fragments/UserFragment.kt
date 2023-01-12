@@ -6,7 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
+import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import com.example.jokenpo.R
 
 
@@ -22,6 +23,11 @@ class UserFragment : Fragment() {
         var btnBack = view.findViewById<ImageView>(R.id.imgBack)
         var btnNext = view.findViewById<ImageView>(R.id.imgNext)
         var imgUsuario = view.findViewById<ImageView>(R.id.imgUsuario)
+        var btnPlay = view.findViewById<TextView>(R.id.tvPlay)
+
+        btnPlay.setOnClickListener {
+            findNavController().navigate(R.id.mainFragment)
+        }
 
         var listaSkin = listOf(
             R.drawable.avatar1,
@@ -49,7 +55,6 @@ class UserFragment : Fragment() {
                 while (i <= listaSkin.size) {
                     i--
                     imgUsuario.setImageResource(listaSkin[i])
-                    Toast.makeText(context, "${listaSkin.size} e ${i}", Toast.LENGTH_SHORT).show()
                     break
                 }
             }
@@ -63,7 +68,6 @@ class UserFragment : Fragment() {
                 while (i <= listaSkin.size) {
                     i++
                     imgUsuario.setImageResource(listaSkin[i])
-                    Toast.makeText(context, "${listaSkin.size} e ${i}", Toast.LENGTH_SHORT).show()
                     break
                 }
             }
@@ -73,13 +77,8 @@ class UserFragment : Fragment() {
             imgUsuario.setImageResource(listaSkin.random())
             }
 
-
-
         return view
     }
-
-
-
 }
 
 

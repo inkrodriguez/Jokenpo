@@ -27,5 +27,13 @@
         android:id="@+id/highscoreFragment"
         android:name="com.example.jokenpo.Fragments.HighscoreFragment"
         android:label="fragment_highscore"
-        tools:layout="@layout/fragment_highscore" />
+        tools:layout="@layout/fragment_highscore" >
+        <action
+            android:id="@+id/action_highscoreFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+        <argument
+            android:name="pontuacaoFinal"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>
