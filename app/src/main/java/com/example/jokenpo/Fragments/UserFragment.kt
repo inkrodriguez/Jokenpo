@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.jokenpo.R
 
 
@@ -19,15 +20,11 @@ class UserFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View ? {
         val view = inflater.inflate(R.layout.fragment_user, container, false)
-        var btnRandom = view.findViewById<ImageView>(R.id.imgRandom)
-        var btnBack = view.findViewById<ImageView>(R.id.imgBack)
-        var btnNext = view.findViewById<ImageView>(R.id.imgNext)
-        var imgUsuario = view.findViewById<ImageView>(R.id.imgUsuario)
-        var btnPlay = view.findViewById<TextView>(R.id.tvPlay)
-
-        btnPlay.setOnClickListener {
-            findNavController().navigate(R.id.mainFragment)
-        }
+        val btnRandom = view.findViewById<ImageView>(R.id.imgRandom)
+        val btnBack = view.findViewById<ImageView>(R.id.imgBack)
+        val btnNext = view.findViewById<ImageView>(R.id.imgNext)
+        val imgUsuario = view.findViewById<ImageView>(R.id.imgUsuario)
+        val btnPlay = view.findViewById<TextView>(R.id.tvPlay)
 
         var listaSkin = listOf(
             R.drawable.avatar1,
@@ -75,7 +72,13 @@ class UserFragment : Fragment() {
 
         btnRandom.setOnClickListener {
             imgUsuario.setImageResource(listaSkin.random())
-            }
+        }
+
+        btnPlay.setOnClickListener {
+            val imgUser = listaSkin[i]
+            val direcao = UserFragmentDirections.actionUserFragmentToMainFragment(imgUser)
+            findNavController().navigate(direcao)
+        }
 
         return view
     }

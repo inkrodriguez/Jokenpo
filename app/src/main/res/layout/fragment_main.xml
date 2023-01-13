@@ -4,137 +4,192 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/bg7"
     tools:context=".Fragments.MainFragment"
     tools:layout_editor_absoluteX="26dp"
     tools:layout_editor_absoluteY="37dp">
 
-    <ImageView
-        android:id="@+id/imgTesoura"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/tesoura2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgPapel"
-        app:layout_constraintTop_toBottomOf="@+id/imgMachineChoice"
-        app:layout_constraintVertical_bias="0.138" />
 
     <ImageView
-        android:id="@+id/imgMachineChoice"
-        android:layout_width="233dp"
-        android:layout_height="216dp"
-        android:layout_marginTop="200dp"
+        android:id="@+id/imageView2"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/moldura"
+        android:src="@drawable/moeda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imgPapel"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/papel2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgTesoura"
-        app:layout_constraintStart_toEndOf="@+id/imgPedra"
-        app:layout_constraintTop_toBottomOf="@+id/imgYourChoice"
-        app:layout_constraintVertical_bias="0.127" />
-
-    <ImageView
-        android:id="@+id/imgPedra"
-        android:layout_width="0dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="4dp"
-        android:src="@drawable/pedra2"
-        app:layout_constraintBottom_toBottomOf="@+id/imgPapel"
-        app:layout_constraintEnd_toStartOf="@+id/imgPapel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgPapel"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imgYourChoice"
-        android:layout_width="134dp"
-        android:layout_height="126dp"
-        android:layout_marginTop="292dp"
-        android:src="@drawable/moldura"
-        app:layout_constraintEnd_toStartOf="@+id/imgMachineChoice"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="225dp"
-        android:layout_height="69dp">
-
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/heart2" />
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/heart2" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/heart2" />
-
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btnJogar"
-        android:layout_width="175dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginBottom="52dp"
-        android:text="Jogar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvHighscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="32dp"
+        android:elevation="5dp"
+        android:fontFamily="@font/pixelsix10"
         android:hint="0"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:textSize="34sp"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imgMachineChoice"
+        android:layout_width="216dp"
+        android:layout_height="215dp"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/moldura"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgMold"
+        android:layout_width="137dp"
+        android:layout_height="137dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/moldura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgUser"
+        android:layout_width="105dp"
+        android:layout_height="115dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/avatar1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="135dp"
+        android:layout_marginBottom="116dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="5dp">
+
+        <ImageView
+            android:id="@+id/imgPapel"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="144dp"
+            android:src="@drawable/papel2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgPedra" />
+
+        <ImageView
+            android:id="@+id/imgTesoura"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginBottom="148dp"
+            android:src="@drawable/tesoura2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.615"
+            app:layout_constraintStart_toEndOf="@+id/imgPapel" />
+
+        <ImageView
+            android:id="@+id/imgPedra"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="148dp"
+            android:src="@drawable/pedra2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgYourChoice"
+        android:layout_width="156dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="76dp"
+        android:src="@drawable/moldura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgMold" />
+
+    <ImageView
+        android:id="@+id/imgHeart"
+        android:layout_width="88dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/heart3"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvVida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="28dp"
+        android:elevation="5dp"
+        android:fontFamily="@font/pixelsix10"
         android:hint="3"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#FFFFFF"
         android:textColorHint="#FFFFFF"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="@+id/imgHeart"
+        app:layout_constraintTop_toTopOf="@+id/imgHeart" />
+
+    <ImageView
+        android:id="@+id/imgPlayMain"
+        android:layout_width="141dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/play3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvYou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/pixelsix10"
+        android:text="YOU"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgYourChoice"
+        app:layout_constraintEnd_toEndOf="@+id/imgYourChoice" />
+
+    <TextView
+        android:id="@+id/tvMaquina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/pixelsix10"
+        android:text="CPU"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/imgMachineChoice"
+        app:layout_constraintEnd_toEndOf="@+id/imgMachineChoice" />
+
+    <ImageView
+        android:id="@+id/imgMold2"
+        android:layout_width="156dp"
+        android:layout_height="175dp"
+        android:src="@drawable/moldura"
+        app:layout_constraintBottom_toBottomOf="@+id/imgYourChoice"
+        app:layout_constraintStart_toStartOf="@+id/imgYourChoice"
+        app:layout_constraintTop_toTopOf="@+id/imgYourChoice" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

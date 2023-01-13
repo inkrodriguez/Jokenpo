@@ -22,6 +22,10 @@
         <action
             android:id="@+id/action_mainFragment_to_highscoreFragment"
             app:destination="@id/highscoreFragment" />
+        <argument
+            android:name="imgUser"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/highscoreFragment"

@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.jokenpo.R
 import com.example.jokenpo.data.Jogo
 
@@ -24,16 +25,20 @@ class MainFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_main, container, false)
 
+        val argumentos by navArgs<MainFragmentArgs>()
+
+        val imgUser = view.findViewById<ImageView>(R.id.imgUser)
         val btnPedra = view.findViewById<ImageView>(R.id.imgPedra)
         val btnPapel = view.findViewById<ImageView>(R.id.imgPapel)
         val btnTesoura = view.findViewById<ImageView>(R.id.imgTesoura)
         val imgYourChoice = view.findViewById<ImageView>(R.id.imgYourChoice)
         val imgMachineChoice = view.findViewById<ImageView>(R.id.imgMachineChoice)
-        val btnJogar = view.findViewById<Button>(R.id.btnJogar)
+        val imgPlayMain = view.findViewById<ImageView>(R.id.imgPlayMain)
         val tvHighscore = view.findViewById<TextView>(R.id.tvHighscore)
         val tvVida = view.findViewById<TextView>(R.id.tvVida)
         val jogo = Jogo()
 
+        imgUser.setImageResource(argumentos.imgUser)
 
         val listaOpcoes = listOf(
             (R.drawable.pedra2),
@@ -57,7 +62,7 @@ class MainFragment : Fragment() {
         }
 
 
-        btnJogar.setOnClickListener {
+        imgPlayMain.setOnClickListener {
 
             if (jogo.player.vida == 1) {
                 val pontuacaoFinal: Int = jogo.player.highscore
@@ -75,11 +80,11 @@ class MainFragment : Fragment() {
                 jogo.jogar()
                 tvHighscore.text = jogo.player.highscore.toString()
                 tvVida.text = jogo.player.vida.toString()
-
             }
         }
 
         return view
     }
+
 
 }
