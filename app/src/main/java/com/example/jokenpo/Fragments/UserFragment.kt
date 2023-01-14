@@ -1,5 +1,7 @@
 package com.example.jokenpo.Fragments
 
+import android.content.Context
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +12,7 @@ import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.jokenpo.R
+import com.example.jokenpo.data.Jogo
 
 
 class UserFragment : Fragment() {
@@ -19,12 +22,16 @@ class UserFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View ? {
+
         val view = inflater.inflate(R.layout.fragment_user, container, false)
         val btnRandom = view.findViewById<ImageView>(R.id.imgRandom)
         val btnBack = view.findViewById<ImageView>(R.id.imgBack)
         val btnNext = view.findViewById<ImageView>(R.id.imgNext)
         val imgUsuario = view.findViewById<ImageView>(R.id.imgUsuario)
         val btnPlay = view.findViewById<TextView>(R.id.tvPlay)
+        val jogo = Jogo()
+
+        Som()
 
         var listaSkin = listOf(
             R.drawable.avatar1,
@@ -81,6 +88,12 @@ class UserFragment : Fragment() {
         }
 
         return view
+    }
+
+    fun Som(){
+        var background = R.raw.backgroundmusic
+        var mediaPlayer: MediaPlayer = MediaPlayer.create(context, background);
+        mediaPlayer.start();
     }
 }
 

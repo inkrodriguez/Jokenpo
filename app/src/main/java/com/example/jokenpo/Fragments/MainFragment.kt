@@ -2,6 +2,7 @@ package com.example.jokenpo.Fragments
 
 import android.content.Context
 import android.media.Image
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -40,24 +41,40 @@ class MainFragment : Fragment() {
 
         imgUser.setImageResource(argumentos.imgUser)
 
-        val listaOpcoes = listOf(
-            (R.drawable.pedra2),
-            R.drawable.papel2,
-            R.drawable.tesoura2
-        )
+        var listaOpcoes = listOf(
+            R.drawable.pedra4,
+            R.drawable.papel4,
+            R.drawable.tesoura4)
+
+        //TROCA AS CORES DAS MÃOS
+        if(argumentos.imgUser != R.drawable.avatar4) {
+            listaOpcoes = listOf(
+                R.drawable.pedra3,
+                R.drawable.papel3,
+                R.drawable.tesoura3)
+        } else {
+            listaOpcoes = listOf(
+                R.drawable.pedra4,
+                R.drawable.papel4,
+                R.drawable.tesoura4)
+
+            btnPedra.setImageResource(listaOpcoes[0])
+            btnPapel.setImageResource(listaOpcoes[1])
+            btnTesoura.setImageResource(listaOpcoes[2])
+        }
 
         btnPedra.setOnClickListener {
-            imgYourChoice.setImageResource(R.drawable.pedra2)
+            imgYourChoice.setImageResource(listaOpcoes[0])
             jogo.player.opcao = "pedra"
         }
 
         btnPapel.setOnClickListener {
-            imgYourChoice.setImageResource(R.drawable.papel2)
+            imgYourChoice.setImageResource(listaOpcoes[1])
             jogo.player.opcao = "papel"
         }
 
         btnTesoura.setOnClickListener {
-            imgYourChoice.setImageResource(R.drawable.tesoura2)
+            imgYourChoice.setImageResource(listaOpcoes[2])
             jogo.player.opcao = "tesoura"
         }
 
@@ -73,11 +90,11 @@ class MainFragment : Fragment() {
                 imgMachineChoice.setImageResource(listaOpcoesRandom)
 
                 when (listaOpcoesRandom) {
-                    R.drawable.pedra2 -> jogo.maquina.opcao = "pedra"
-                    R.drawable.papel2 -> jogo.maquina.opcao = "papel"
-                    R.drawable.tesoura2 -> jogo.maquina.opcao = "tesoura"
+                    listaOpcoes[0] -> jogo.maquina.opcao = "pedra"
+                    listaOpcoes[1] -> jogo.maquina.opcao = "papel"
+                    listaOpcoes[2] -> jogo.maquina.opcao = "tesoura"
                 }
-                jogo.jogar()
+                jogo.jogadas()
                 tvHighscore.text = jogo.player.highscore.toString()
                 tvVida.text = jogo.player.vida.toString()
             }
